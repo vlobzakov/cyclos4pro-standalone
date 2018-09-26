@@ -1,6 +1,6 @@
 # cyclos4pro-standalone
 
-[![Сyclos](images/cyclos.png)](../../../cyclos)
+[![Сyclos](images/cyclos-logo.png)](../../../cyclos)
 ##  Сyclos Collection
 
 Cyclos comes with a range of banking and payment options, a complete e-commerce system and high and low end mobile access channels. The mobile channel offers a scalable and cheap opportunity for banks to enlarge their offer branchless banking.
