@@ -1,0 +1,76 @@
+---
+jpsVersion: '0.2'
+jpsType: install
+id: cyclos
+name: Cyclos4 PRO
+version: 4.10.4
+logo: https://github.com/jelastic-jps/cyclos/raw/master/images/cyclos.png
+type: java
+homepage: http://project.cyclos.org/
+description:
+  en: "<p>Cyclos offers a complete on-line payment system with additional modules
+      such as e-commerce and communication tools. The Cyclos platform permits institutions
+      such as local banks and MFI`s to offer banking services that can stimulate local
+      trade and development. Cyclos is also used by many organizations and communities
+      to provide community currency services.</p>"
+success:
+  text: 'Below you will find your admin panel link, username and password Admin panel URL: ${env.protocol}://${env.domain}'
+
+categories:
+  - apps/accounting
+  - apps/cms
+  - apps/content-management
+  - apps/sales-and-marketing
+
+ha: false
+engine: java8
+ssl: false
+
+nodes:
+  - extip: false
+    count: 1
+    cloudlets: 8
+    nodeType: tomcat9
+  - extip: false
+    count: 1
+    cloudlets: 8
+    nodeType: postgres9
+    
+onBeforeResetNodePassword[nodeGroup:sqldb]:
+  - resetingNodePassword
+  - stopEvent
+
+onInstall:
+  - ConfigDB
+  - deploy:
+      archive: http://docker169849-mkdocs.demo.jelastic.com/cyclos-4.10.4.zip
+      name: cyclos-4.10.4.zip
+      context: ROOT
+  - replace
+
+actions:
+  resetingNodePassword:
+    script: https://raw.githubusercontent.com/vlobzakov/cyclos/master/cyclos-3/dumps/resetNodePassword.js
+  
+  ConfigDB:
+    cmd[sqldb]: PGPASSWORD=${nodes.sqldb.password} psql -Uwebadmin postgres -c "create database cyclos4;"
+
+  replace:
+    - cmd[cp]: |-
+            cp -fR /opt/tomcat/webapps/ROOT/cyclos-4.10.4/web/* /opt/tomcat/webapps/ROOT/
+            cp /opt/tomcat/webapps/ROOT/WEB-INF/classes/cyclos-release.properties /opt/tomcat/webapps/ROOT/WEB-INF/classes/cyclos.properties
+        
+    - replaceInFile:
+        log: ${this.message}
+        nodeType: tomcat9
+        path: "/opt/tomcat/webapps/ROOT/WEB-INF/classes/cyclos.properties"
+        replacements:
+          - pattern: "cyclos.datasource.jdbcUrl = jdbc:postgresql://localhost/cyclos4"
+            replacement: "cyclos.datasource.jdbcUrl = jdbc:postgresql://node${nodes.postgres9[0].id}-${env.domain}/cyclos4"
+          - pattern: "cyclos.datasource.user = cyclos"
+            replacement: "cyclos.datasource.user = webadmin"
+          - pattern: "cyclos.datasource.password = cyclos"
+            replacement: "cyclos.datasource.password = ${nodes.sqldb.password}"
+    - cmd[cp]: |-
+            sudo service tomcat restart
+            
