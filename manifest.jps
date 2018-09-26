@@ -49,9 +49,6 @@ onInstall:
   - replace
 
 actions:
-  resetingNodePassword:
-    script: https://raw.githubusercontent.com/vlobzakov/cyclos/master/cyclos-3/dumps/resetNodePassword.js
-  
   ConfigDB:
     cmd[sqldb]: PGPASSWORD=${nodes.sqldb.password} psql -Uwebadmin postgres -c "create database cyclos4;"
 
