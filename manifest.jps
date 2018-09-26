@@ -14,7 +14,7 @@ description:
       trade and development. Cyclos is also used by many organizations and communities
       to provide community currency services.</p>"
 success:
-  text: 'Below you will find your admin panel link, username and password Admin panel URL: ${env.protocol}://${env.domain}'
+  text: 'Access your Cyclos4 PRO admin panel according to your Cyclos account: ${env.protocol}://${env.domain}'
 
 categories:
   - apps/accounting
