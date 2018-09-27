@@ -35,7 +35,7 @@ DB                   |    PostgreSQL      |       1                        |    
 
 In order to get this solution instantly deployed, click the "Get It Hosted Now" button, specify your email address within the widget, choose one of the [Jelastic Public Cloud providers](https://jelastic.cloud) and press Install.
 
-[![GET IT HOSTED](https://raw.githubusercontent.com/jelastic-jps/jpswiki/master/images/getithosted.png)](https://jelastic.com/install-application/?manifest=https%3A%2F%2Fgithub.com%2Fjelastic-jps%2Fcyclos%2Fraw%2Fmaster%2Fcyclos-4%2Fmanifest.jps)
+[![GET IT HOSTED](https://raw.githubusercontent.com/jelastic-jps/jpswiki/master/images/getithosted.png)](https://jelastic.com/install-application/?manifest=https://github.com/vlobzakov/cyclos4pro-standalone/raw/master/manifest.jps)
 
 To deploy this package to Jelastic Private Cloud, import [this JPS manifest](../../../raw/master/cyclos-4/manifest.jps) within your dashboard ([detailed instruction](https://docs.jelastic.com/environment-export-import#import)).
 
