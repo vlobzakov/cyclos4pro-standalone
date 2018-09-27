@@ -1,6 +1,7 @@
 <p align="center"> 
 <img style="padding: 0 15px; float: left;" src="images/cyclos-logo.png" width="70">
 </p>
+
 # Cyclos 4
 
 ### Highlights
