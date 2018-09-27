@@ -7,7 +7,7 @@
 ### Highlights
 This package is designed to deploy Cyclos environment is a feature-rich online banking solution that is easy to use and maintain, flexible, secure and highly customisable.<br />
 Cyclos comes with a range of banking and payment options, a complete e-commerce system and high and low end mobile access channels. The mobile channel offers a scalable and cheap opportunity for banks to enlarge their offer branchless banking.
-Cyclos is used by local banks, C3 networks, MFI's, barters, community currencies and time banks. The dynamic structure of Cyclos allows organisations to ‘build’ a dedicated payment system from scratch just by changing the configuration (without the hassle to make code changes).
+Cyclos is used by local banks, C3 networks, MFI's, barters, community currencies and time banks. The dynamic structure of Cyclos allows organisations to create a dedicated payment system from scratch just by changing the configuration (without the hassle to make code changes).
 
 ### Environment Topology
 
