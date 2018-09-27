@@ -4,7 +4,7 @@ jpsType: install
 id: cyclos
 name: Cyclos4 PRO
 version: 4.10.4
-logo: https://github.com/jelastic-jps/cyclos/raw/master/images/cyclos.png
+logo: /images/cyclos-logo.png
 type: java
 homepage: http://project.cyclos.org/
 description:
