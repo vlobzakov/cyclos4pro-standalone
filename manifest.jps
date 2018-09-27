@@ -13,6 +13,7 @@ description:
       such as local banks and MFI`s to offer banking services that can stimulate local
       trade and development. Cyclos is also used by many organizations and communities
       to provide community currency services."
+start_page: ${env.url}
 success:
   text: "Instance address: [${env.url}](${env.url}). To add custom domain name for your Cyclos installation follow the steps described in our [documentation](http://docs.jelastic.com/custom-domains)"
 
