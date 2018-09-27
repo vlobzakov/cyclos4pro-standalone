@@ -1,7 +1,7 @@
-[<p align="center"> 
+<p align="center"> 
 <img style="padding: 0 15px; float: left;" src="images/cyclos-logo.png" width="70">
 </p>
-##  Cyclos 4
+#  Cyclos 4
 
 ### Highlights
 This package is designed to deploy Cyclos environment is a feature-rich online banking solution that is easy to use and maintain, flexible, secure and highly customisable.<br />
