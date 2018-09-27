@@ -14,7 +14,7 @@ description:
       trade and development. Cyclos is also used by many organizations and communities
       to provide community currency services."
 success:
-  text: "Instance address: <a href='${env.url}' target='_blank'>${env.url}</a> </br></br>To add custom domain name for your Cyclos installation follow the steps described in our <a href='http://docs.jelastic.com/custom-domains' target='_blank'>documentation</a>"
+  text: "Instance address: [${env.url}](${env.url}). To add custom domain name for your Cyclos installation follow the steps described in our [documentation](http://docs.jelastic.com/custom-domains)"
 
 categories:
   - apps/accounting
